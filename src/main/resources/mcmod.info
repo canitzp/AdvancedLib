@@ -1,0 +1,16 @@
+[
+{
+  "modid": "advancedlib",
+  "name": "AdvancedLib",
+  "description": "This is a Core Mod for some of canitzp's Mods",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["canitzp"],
+  "credits": "Mojang, MinecraftForge",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
