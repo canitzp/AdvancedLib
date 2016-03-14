@@ -3,6 +3,7 @@ package de.canitzp.advancedlib.util;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDict extends OreDictionary {
@@ -30,8 +31,9 @@ public class OreDict extends OreDictionary {
     }
 
     public static Item getItemFromName(String name) {
-        if (Item.itemRegistry.containsKey(name)) {
-            return (Item)Item.itemRegistry.getObject(name);
+        ResourceLocation location = new ResourceLocation(name);
+        if (Item.itemRegistry.containsKey(location)) {
+            return (Item)Item.itemRegistry.getObject(location);
         }
         else {
             try {

@@ -11,11 +11,11 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
     }
 }
 
-apply plugin: 'forge'
+apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'idea'
 
 group = "de.canitzp.advancedlib"
@@ -23,9 +23,11 @@ archivesBaseName = "AdvancedLib"
 version = "0.1.0"
 
 minecraft {
-    version = "1.7.10-10.13.4.1558-1.7.10"
+    version = "1.8.9-11.15.1.1722"
     runDir = "run"
-    mappings = "stable_12"
+    mappings = "stable_22"
+    makeObfSourceJar = false
+    useDepAts = true
     replaceIn "AdvancedLib.java"
     replace "@VERSION@", project.version.toString()
     replace "@MODNAME@", project.archivesBaseName.toString()
@@ -42,5 +44,11 @@ processResources {
     }
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+idea {
+    module {
+        inheritOutputDirs = true
     }
 }
